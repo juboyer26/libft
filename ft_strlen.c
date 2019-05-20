@@ -21,10 +21,3 @@ size_t		ft_strlen(char *str)
 		len++;
 	return (len);
 }
-
-int		main(void)
-{
-	char i = ft_strlen("hello world");
-	printf("%d\n", i);
-	return (0);
-}
