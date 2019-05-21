@@ -6,14 +6,11 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:07:30 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/20 15:09:31 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/21 11:13:19 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalpha(int c)
+int		ft_isalpha(int c)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else
-        return (0);
+	return ((c >= 65 && c <= 89) || (c >= 97 && c <= 122));
 }

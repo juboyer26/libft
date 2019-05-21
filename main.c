@@ -1,16 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 08:02:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/21 10:21:05 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/21 11:11:14 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+ft_isalnumb.c
+int		main()
 {
-	return (c >= 32 && c <= 126);
+	printf("%i", ft_isalnumb('-'));
+	return (0);
 }
+
+ft_isalpha.c
+int		main()
+{
+	printf("%i", ft_isalpha('-'));
+	return (0);
+}
+ft_isascii.c
+
+ft_isdigit.c
+int		main(void)
+{
+	printf("%i", ft_isdigit(51));
+	return (0);
+}
+
+ft_isprint.c
+
+ft_tolower.c
+int		main()
+{
+	printf("%i", ft_tolower(65));
+	return (0);
+}
+
+ft_toupper.c
+int		main()
+{
+	printf("%i", ft_toupper(97));
+	return (0);
+}
+
