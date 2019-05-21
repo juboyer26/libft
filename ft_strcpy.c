@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 08:11:45 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/21 14:37:51 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/21 12:06:48 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/21 14:48:26 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+#include <stdio.h>  /*please do not forget to delete here :)*/
+
+char	*ft_strcpy(char *dst, const char *src)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	int i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
+
+int		main(void)
+{
+	char dest[100];
+
+    printf("%s", ft_strcpy(dest,"hello" ));
+	return (0);
 }

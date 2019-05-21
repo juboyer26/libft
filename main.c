@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/21 11:11:14 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/21 16:15:34 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,25 @@ int		main()
 	return (0);
 }
 
+ft_putstr.c
+int		main()
+{
+	ft_putstr("hello");
+	return (0);
+}
+
+ft_strcpy.c
+int		main(void)
+{
+	char dest[100];
+
+    printf("%s", ft_strcpy(dest,"hello" ));
+	return (0);
+}
+
+ft_atoi
+int		main(void)
+{
+	printf("%i", ft_atoi("0009"));
+	return (0);
+}
