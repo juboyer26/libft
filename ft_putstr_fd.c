@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:21:09 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/22 14:33:02 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/22 14:43:18 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/22 14:45:58 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void    ft_putstr_fd(char const *s, int fd)
 {
-	int i;
-	int num;
-	int sign;
+    int i;
 
-	i = 0;
-	num = 0;
-	sign = 1;
-	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 43 || str[i] == 45)
-	{
-		i++;
-	}
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	while (str[i] >= 48 && 57 >= str[i])
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * sign);
+    i = 0;
+    while (s[i] != '\0')
+    {
+        ft_putchar_fd(s[i]);
+        i++;
+    }
 }

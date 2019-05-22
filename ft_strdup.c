@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:21:09 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/22 14:33:02 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/22 07:57:51 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/22 14:37:38 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char*ft_strdup(const char *s1)
 {
 	int i;
-	int num;
-	int sign;
+	char*dest;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	while (s1[i] != '\0')
 		i++;
-	if (str[i] == 43 || str[i] == 45)
+	dest = (char*)malloc(sizeof(char) * (i + 1));
+	dest[i] = '\0';
+	i--;
+	while (i >= 0)
 	{
-		i++;
+		dest[i] = s1[i];
+		i--;
 	}
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	while (str[i] >= 48 && 57 >= str[i])
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * sign);
+	free(
+	return (dest);
 }

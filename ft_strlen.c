@@ -6,10 +6,11 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 12:56:46 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/20 14:32:51 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/22 14:38:04 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 
 size_t		ft_strlen(char *str)

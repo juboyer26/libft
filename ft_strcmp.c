@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:21:09 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/22 14:33:02 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/22 10:51:08 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/22 14:36:34 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-	int num;
-	int sign;
+	int x;
 
-	i = 0;
-	num = 0;
-	sign = 1;
-	if ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 43 || str[i] == 45)
-	{
-		i++;
-	}
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	while (str[i] >= 48 && 57 >= str[i])
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * sign);
+	x = 0;
+	while ((s1[x] != '\0')  && (s1[x] == s2[x]))
+		x++;
+	return (s1[x] - s2[x]);
 }

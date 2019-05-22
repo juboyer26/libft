@@ -6,13 +6,22 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:04:58 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/21 15:13:11 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/22 14:38:49 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	strncpy(char *dst, const char *src, size_t len)
-{
-	int = len;
+#include "libft.h"
 
-	len = 0;
-	while (len <    
+char	*ft_strncpy(char *dst, const char *src, size_t len)
+{
+	int i;
+
+	i = 0;
+	while (src[i] != '\0' && i <= len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
