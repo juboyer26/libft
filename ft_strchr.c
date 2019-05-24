@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:51:08 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/23 10:00:06 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/23 12:24:00 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/24 07:55:30 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char    *ft_strchr(const char *s, int c)
 {
-	int x;
+   int i;
 
-	x = 0;
-	while ((s1[x] != '\0')  && (s1[x] == s2[x]))
-		x++;
-	return (s1[x] - s2[x]);
+   i = 0;
+   while (s[i] != '\0')
+   {
+       if (s[i] == (char)c)
+            return ((char *)&s[i]);
+       i++;
+   }
+   return (NULL);
+}
+
+#include <stdio.h>
+
+int main()
+{
+    char s[] = "hello this is justine";
+    int c = 'j';
+    printf("%s", ft_strchr(s, c));
+    return (0);
 }

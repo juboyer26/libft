@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:51:08 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/23 10:00:06 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/24 07:21:36 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/24 08:19:20 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char    *ft_strrchr(const char *s, int c)
 {
-	int x;
+    int			i;
+	const char	*j;
 
-	x = 0;
-	while ((s1[x] != '\0')  && (s1[x] == s2[x]))
-		x++;
-	return (s1[x] - s2[x]);
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			j = s + i;
+		i++;
+	}
+	if (s[i] == c)
+		return ((char*)(s + i));
+	return ((char*)j);
+}
+
+#include <stdio.h>
+
+int     main()
+{
+    char s[] = "hello there everyone";
+    int c = 'o';
+    printf("%s", ft_strrchr(s, c));
+    return (0);
 }

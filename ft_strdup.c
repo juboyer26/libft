@@ -6,16 +6,16 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:57:51 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/22 14:37:38 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/23 11:33:32 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char*ft_strdup(const char *s1)
+char *ft_strdup(const char *s1)
 {
 	int i;
-	char*dest;
+	char *dest;
 
 	i = 0;
 	while (s1[i] != '\0')
@@ -28,6 +28,21 @@ char*ft_strdup(const char *s1)
 		dest[i] = s1[i];
 		i--;
 	}
-	free(
 	return (dest);
+}
+
+void test_mystrdup()
+{
+    char *str = ft_strdup("justine");
+    ft_putstr(str);
+}
+
+
+int main()
+{
+    test_mystrdup();
+    
+    while(1) {
+    //`do nothin!!
+    }
 }
