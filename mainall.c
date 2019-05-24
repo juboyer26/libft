@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/23 11:27:25 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/24 11:43:48 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,4 +144,34 @@ int     main()
     i = 3;
     printf ("%d", ft_strncmp(s1, s2, i));
     return (0);
+}
+
+ft_strchr.c
+#include <stdio.h>
+
+int main()
+{
+    char s[] = "hello this is justine";
+    int c = 'j';
+    printf("%s", ft_strchr(s, c));
+    return (0);
+}
+
+ft_strdup.c
+
+int		main()
+{
+	char *str = ft_strdup("justine");
+	ft_putstr(str);
+}
+
+ft_strrchr.c
+#include <stdio.h>
+
+int		main()
+{
+	char s[] = "hello there everyone";
+	int c = 'o';
+	printf("%s", ft_strrchr(s, c));
+	return (0);
 }
