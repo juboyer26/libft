@@ -6,14 +6,13 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 15:55:01 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/24 12:31:50 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/27 13:55:31 by juboyer          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */i
+/* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void    ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	if (n < 0)
 	{
@@ -25,10 +24,4 @@ void    ft_putnbr(int n)
 		ft_putchar(n / 10);
 	}
 	ft_putchar(n % 10 + 48);
-}
-
-int		main()
-{
-	ft_putnbr(10);
-	return (0);
 }

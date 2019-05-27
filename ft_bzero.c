@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 07:19:38 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/27 15:56:42 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/27 07:36:19 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/27 10:36:22 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void		ft_bzero(void *s, size_t n)
 {
-	char			*str;
-	unsigned char	replace;
-	size_t			count;
+	size_t i;
 
-	str = (char *)b;
-	replace = c;
-	count = 0;
-	while (count < len)
+	i = 0;
+	while (i < n)
 	{
-		str[count] = replace;
-		count++;
+		((char *)s)[i] = 0;
+		i++;
 	}
-	return (b);
 }

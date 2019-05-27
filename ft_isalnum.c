@@ -6,13 +6,13 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:37:15 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/22 14:33:19 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/27 10:52:39 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnumb(int c)
+int		ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);

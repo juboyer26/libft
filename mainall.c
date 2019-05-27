@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/24 15:41:12 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/27 14:37:04 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,4 +174,29 @@ int		main()
 	int c = 'o';
 	printf("%s", ft_strrchr(s, c));
 	return (0);
+}
+
+ft_strstr.c
+
+#include <stdio.h>
+
+int		main()
+{
+	char haystack[] = "HelloZJustineBoyer";
+	char needle[] = "Justine";
+	printf("%s", ft_strstr(haystack, needle));
+	return (0);
+}
+
+ft_memset.c
+
+int main ()
+{
+	char str[50];
+	strcpy(str,"This is string.h library function");
+	puts(str);
+
+	ft_memset(str,'$',7);
+	puts(str);
+    return(0);
 }
