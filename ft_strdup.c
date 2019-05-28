@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:57:51 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/27 14:34:53 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/28 08:05:18 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ char		*ft_strdup(const char *s1)
 
 	i = 0;
 	while (s1[i] != '\0')
-	{
 		i++;
-	}
 	i++;
 	dest = (char *)malloc(sizeof(char) * i);
 	if (dest == NULL)
