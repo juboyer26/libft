@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/27 14:37:04 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/29 16:27:19 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,4 +199,64 @@ int main ()
 	ft_memset(str,'$',7);
 	puts(str);
     return(0);
+}
+
+ft_memcpy.c
+int main () {
+   const char src[50] = "http://www.tutorialspoint.com";
+   char dest[50];
+   strcpy(dest,"Heloooo!!");
+   printf("Before memcpy dest = %s\n", dest);
+   ft_memcpy(dest, src, strlen(src)+1);
+   printf("After memcpy dest = %s\n", dest);
+
+   return(0);
+}
+
+ft_memccpy.c
+
+#include <stdio.h>
+int main(void)
+{
+   char *src = "This is the source string";
+   char dest[50];
+   char *ptr;
+   ptr = (char *) memccpy(dest, src, 'c', strlen(src));
+   if (ptr)
+   {
+      *ptr = '\0';
+      printf("The character was found: %s\n", dest);
+   }
+   else
+      printf("The character wasn't found\n");
+   return 0;
+}
+
+
+ft_memchr.c
+int main(int argc, const char * argv[])
+{
+    char search[] = "TechOnTheNet";
+    char *ptr;
+
+    /* Return a pointer to the first 'N' within the search string */
+    ptr = (char*)ft_memchr(search, 'N', strlen(search));
+
+    /* If 'N' was found, print its location (This should produce "10") */
+    if (ptr != NULL) printf("Found 'N' at position %ld.\n", 1+(ptr-search));
+    else printf("'N' was not found.\n");
+
+    return 0;
+}
+
+ft_strlcat.c
+int main(void)
+{
+   char dest[20] = "thing sucks";
+   char src[] = "this thing sucks alot";
+
+   strlcat(dest, src, 19);
+   printf("%s\n", dest);
+
+   return 0;
 }
