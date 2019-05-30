@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 11:18:38 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/30 12:58:13 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/30 12:46:26 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/30 12:46:43 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
+	char	v[10];
+	long	nb;
+	int		i;
 
-	i = 0;
-	if (s == NULL)
+	nb = n;
+	if (nb < 0)
 	{
-		write(1, "(null)", 6);
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
-	else
+	if (nb == 0)
+		ft_putchar_fd('0', fd);
+	i = 0;
+	while (nb > 0)
 	{
-		while (*(const char*)(s + i))
-		{
-			write(1, &*(const char*)(s + i), 1);
-			i++;
-		}
+		v[i] = nb % 10 + '0';
+		nb = nb / 10;
+		i++;
+	}
+	i--;
+	while (i >= 0)
+	{
+		ft_putchar_fd(v[i], fd);
+		i--;
 	}
 }

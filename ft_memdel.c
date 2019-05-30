@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 11:18:38 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/30 12:58:13 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/30 12:34:11 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/30 12:34:19 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+void		ft_memdel(void **ap)
 {
-	int i;
-
-	i = 0;
-	if (s == NULL)
+	if (ap)
 	{
-		write(1, "(null)", 6);
-	}
-	else
-	{
-		while (*(const char*)(s + i))
-		{
-			write(1, &*(const char*)(s + i), 1);
-			i++;
-		}
+		free(*ap);
+		*ap = NULL;
 	}
 }

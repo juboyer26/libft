@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/29 16:27:19 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/30 15:34:02 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -259,4 +259,17 @@ int main(void)
    printf("%s\n", dest);
 
    return 0;
+}
+
+or
+int main()
+{
+  char dest[5] = "test1";
+  char src[10] = "copymenow";
+  size_t num = 10;
+
+
+  printf("%zu\n",strlcat(dest, src , 2 ));
+  printf("%s\n", dest);
+  return (0);
 }

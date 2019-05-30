@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 11:18:38 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/30 12:58:13 by juboyer          ###   ########.fr       */
+/*   Created: 2019/05/30 12:38:34 by juboyer           #+#    #+#             */
+/*   Updated: 2019/05/30 12:38:37 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
+	char			*new;
+	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
-	if (s == NULL)
+	if (!(new = (char*)malloc(ft_strlen(s) + 1)))
+		return (NULL);
+	while (s[i])
 	{
-		write(1, "(null)", 6);
+		new[i] = (*f)(i, s[i]);
+		i++;
 	}
-	else
-	{
-		while (*(const char*)(s + i))
-		{
-			write(1, &*(const char*)(s + i), 1);
-			i++;
-		}
-	}
+	new[i] = '\0';
+	return (new);
 }

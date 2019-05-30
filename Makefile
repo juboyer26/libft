@@ -6,30 +6,22 @@
 #    By: juboyer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/24 09:31:34 by juboyer           #+#    #+#              #
-#    Updated: 2019/05/27 11:49:56 by juboyer          ###   ########.fr        #
+#    Updated: 2019/05/30 12:32:04 by juboyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CC = gcc
-FLAGS = -Wall -Werror -Wextra
-ARC = ar rc
+NAME = "libft.a"
 SRC = *.c
 OBJ = *.o
-
-# all: $(NAME)
-
-$(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
-	$(ARC) $(NAME) $(OBJ)
-	ranlib $(NAME)
-
+INCL = libft.h
 all: $(NAME)
-
+$(NAME):
+	gcc -c -Wall -Werror -Wextra $(SRC)
+	ar rv $(NAME) $(OBJ) $(INCL)
+	ranlib $(NAME)
 clean:
-	rm -f *.o
-
+	rm -f $(OBJ)
 fclean: clean
-	rm -f $(NAME)
-
+	 rm -f $(NAME)
 re: fclean all
+
