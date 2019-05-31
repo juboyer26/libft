@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/30 15:34:02 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/05/31 11:41:34 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,4 +272,27 @@ int main()
   printf("%zu\n",strlcat(dest, src , 2 ));
   printf("%s\n", dest);
   return (0);
+}
+
+ft_memcpy.c 
+§:wq
+int main () {
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   memcpy(str1, "abcdef", 6);
+   memcpy(str2, "ABCDEF", 6);
+
+   ret = memcmp(str1, str2, 5);
+
+   if(ret > 0) {
+      printf("str2 is less than str1");
+   } else if(ret < 0) {
+      printf("str1 is less than str2");
+   } else {
+      printf("str1 is equal to str2");
+   }
+
+   return(0);
 }
