@@ -6,28 +6,36 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:40:30 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/03 15:41:14 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/04 12:52:04 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_putnbr(int n)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	if (n < 0)
+	char	v[10];
+	int		i;
+	long	nb;
+
+	i = 0;
+	nb = n;
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		n = n * -1;
+		nb = -nb;
 	}
-	else if (n >= 10)
+	if (nb == 0)
+		ft_putchar('0');
+	while (nb > 0)
 	{
-		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + 48);
+		v[i] = nb % 10 + '0';
+		nb = nb / 10;
+		i++;
 	}
-	else
+	i--;
+	while (i >= 0)
 	{
-		ft_putchar(n + '0');
+		ft_putchar(v[i]);
+		i--;
 	}
 }
