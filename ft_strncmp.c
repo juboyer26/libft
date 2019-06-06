@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:54:57 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/05 16:17:53 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/06 07:46:41 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if ( n == 0)
+	if (n == 0)
 		return (0);
 	while ((unsigned char)*s1 == (unsigned char)*s2 && *s1 != 0 & n-- > 1)
 	{

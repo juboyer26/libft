@@ -6,7 +6,7 @@
 #    By: juboyer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/04 12:17:53 by juboyer           #+#    #+#              #
-#    Updated: 2019/06/04 12:18:10 by juboyer          ###   ########.fr        #
+#    Updated: 2019/06/06 07:53:43 by juboyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,3 +134,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
