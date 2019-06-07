@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/05 13:58:10 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/07 08:06:02 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -341,4 +341,26 @@ int main () {
    }
 
    return(0);
+}
+
+ft_memmove.c
+int main () {
+   char dest[] = "oldstring";
+   const char src[]  = "newstring";
+
+   printf("Before memmove dest = %s, src = %s\n", dest, src);
+   ft_memmove(dest, src, 9);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
+
+   return(0);
+}
+
+ft_strsub.c
+int     main()
+{
+    char j[] = "hello";
+
+    size_t n = 3;
+    printf("%s", ft_strsub(j, 1, n));
+    return (0);
 }

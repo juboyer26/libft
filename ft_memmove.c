@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 09:53:53 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/06 13:57:45 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/07 10:54:10 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 		dst = ft_memcpy(dst1, src1, len);
 	return (dst);
-}
-
-int main () {
-   char dest[] = "oldstring";
-   const char src[]  = "newstring";
-
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   ft_memmove(dest, src, 9);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-
-   return(0);
 }

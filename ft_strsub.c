@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:40:53 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/06 11:11:42 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/07 08:05:58 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,4 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	}
 	else
 		return (NULL);
-}
-
-int     main()
-{
-    char j[] = "hello";
-
-    size_t n = 3;
-    printf("%s", ft_strsub(j, 1, n));
-    return (0);
 }
