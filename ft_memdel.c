@@ -6,13 +6,13 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:34:11 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/30 12:34:19 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/10 09:05:18 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
 	if (ap)
 	{
