@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:21:09 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/03 15:44:31 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/11 16:11:52 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,23 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int num;
-	int sign;
+	long	res;
+	int		sign;
 
-	i = 0;
-	num = 0;
-	sign = 1;
-	while ((str[i] == ' ') || (str[i] == '\r') || (str[i] == '\t') ||
-			(str[i] == '\v') || (str[i] == '\f') || (str[i] == '\n'))
-		i++;
-	if (str[i] == 43 || str[i] == 45)
-	{
-		if (str[i] == 45)
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= 48 && 57 >= str[i])
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * sign);
+	res = 0;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '-')
+		sign = -1;
+	else
+		sign = 1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && (*str >= 48 && *str <= 57))
+		res = (res * 10) + (*str++ - '0');
+	if (res < 0 && sign == 1)
+		return (-1);
+	if (res < 0)
+		return (0);
+	return (res * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:46:26 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/30 12:46:43 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/11 10:04:46 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,18 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	v[10];
-	long	nb;
-	int		i;
-
-	nb = n;
-	if (nb < 0)
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	if (n < 0)
 	{
+		n *= -1;
 		ft_putchar_fd('-', fd);
-		nb = -nb;
 	}
-	if (nb == 0)
-		ft_putchar_fd('0', fd);
-	i = 0;
-	while (nb > 0)
+	else if (n >= 10)
 	{
-		v[i] = nb % 10 + '0';
-		nb = nb / 10;
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + 48, fd);
 	}
-	i--;
-	while (i >= 0)
-	{
-		ft_putchar_fd(v[i], fd);
-		i--;
-	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
