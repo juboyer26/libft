@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:39:20 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/04 12:48:55 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/12 07:16:05 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	if (s1 && s2)
-	{
-		while (*s1)
-		{
-			if (*s1++ != *s2++)
-				return (0);
-		}
-		if (*s1 == *s2 && *s2 == '\0')
-			return (1);
+	if (!(s1 && s2))
 		return (0);
+	else if (ft_strcmp(s1, s2) == 0)
+	{
+		return (1);
 	}
 	return (0);
 }

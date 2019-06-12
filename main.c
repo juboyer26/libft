@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 12:40:53 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/12 07:41:57 by juboyer          ###   ########.fr       */
+/*   Created: 2019/06/12 15:11:42 by juboyer           #+#    #+#             */
+/*   Updated: 2019/06/12 15:54:23 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		main(int argc, char **argv)
 {
-	char	*sub;
-	int		i;
+	char *haystack = NULL;
+	char *needle = NULL;
 
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
-		return (NULL);
-	while (len--)
+	if (argc == 3)
 	{
-		sub[i] = s[start + i];
-		i++;
+		printf("standard strstr: %s\n", strstr(argv[1], argv[2]));
+		printf("Libft strstr: %s\n", ft_strstr(argv[1], argv[2]));
 	}
-	sub[i] = '\0';
-	return (sub);
+	return (0);
 }
