@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:43:18 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/11 11:11:50 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/14 08:11:26 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ void	ft_putstr_fd(char const *s, int fd)
 
 	i = 0;
 	if (!s)
-	{
 		return ;
-	}
 	else
 	{
-		while (s[i])
+		while (s[i] != '\0')
 		{
 			ft_putchar_fd(s[i], fd);
 			i++;

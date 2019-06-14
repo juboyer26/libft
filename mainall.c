@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mainall.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/07 08:06:02 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/14 15:02:01 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,20 @@ int     main()
     char s2[] = " Morning";
     printf("%s", ft_strcat(s1, s2));
     return (0);
+}
+
+or
+int main () {
+   char src[50], dest[50];
+
+   ft_strcpy(src,  "This is source");
+   ft_strcpy(dest, "This is destination");
+
+   ft_strcat(dest, src);
+
+   printf("Final destination string : |%s|", dest);
+
+   return(0);
 }
 
 ft_strncat.c
@@ -363,4 +377,41 @@ int     main()
     size_t n = 3;
     printf("%s", ft_strsub(j, 1, n));
     return (0);
+}
+
+ft_strsplit.c
+int	main()
+{
+  char *res =  "      asdf       qwerty        zxcv";
+  char **temp = ft_strsplit(res, ' ');
+
+  int i = 0;
+  while (i<3)
+  {
+    printf("%s\n", temp[i]);
+    i++;
+  }
+  return (0);
+}
+
+ft_strtrim.c
+int main()
+{
+	char k[] = "hello \n you \t suck \n ok \t cool";
+	printf("%s", ft_strtrim(k));
+	return (0);
+
+}
+
+ft_bzero.c
+int main()
+{
+	char s[10] = "xxxxxxxxx";
+
+	ft_putendl("Before test");
+	write(1, s, 10);
+	ft_bzero(s, 3);
+	ft_putendl("After test");
+	write(1, s, 10);
+	return (0);
 }
