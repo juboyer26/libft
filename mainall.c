@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/14 15:02:01 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/14 16:11:01 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -413,5 +413,14 @@ int main()
 	ft_bzero(s, 3);
 	ft_putendl("After test");
 	write(1, s, 10);
+	return (0);
+}
+
+ft_strnew.c
+int		main()
+{
+	char *str = ft_strnew(7);
+	ft_memmove(str, "justine", ft_strlen("justine"));
+	puts(str);
 	return (0);
 }
