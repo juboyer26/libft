@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:35:22 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/14 16:11:01 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/17 15:48:46 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,10 @@ int		main()
 ft_strcpy.c
 int		main(void)
 {
-	char dest[100];
-
-    printf("%s", ft_strcpy(dest,"hello" ));
-	return (0);
-}
-or
-int		main(void)
-{
 	char *str;
-	char s1[] = "hey";
-	char s2[] = "HELLO";
-	str	= ft_strcpy(s1, s2);
+	char src[] = "hey";
+	char dest[] = "HELLO";
+	str	= ft_strcpy(dest, src);
 	printf("%s", str);
 	return (0);
 }
@@ -202,6 +194,19 @@ int		main()
 	return (0);
 }
 
+ft_strnstr
+int main()
+{
+	char haystack[] = "helloJustineBoyer";
+	char needle[] = "J";
+	size_t i;
+
+	i = 6;
+
+	printf("%s", strnstr(haystack, needle, i));
+	return (0);
+}
+
 ft_memset.c
 
 int main ()
@@ -217,8 +222,9 @@ int main ()
 
 ft_memcpy.c
 int main () {
-   const char src[50] = "http://www.tutorialspoint.com";
+   const char src[50] = "thisIsMySourceString";
    char dest[50];
+
    strcpy(dest,"Heloooo!!");
    printf("Before memcpy dest = %s\n", dest);
    ft_memcpy(dest, src, strlen(src)+1);
@@ -288,28 +294,6 @@ int main()
   return (0);
 }
 
-ft_memcpy.c 
-§:wq
-int main () {
-   char str1[15];
-   char str2[15];
-   int ret;
-
-   memcpy(str1, "abcdef", 6);
-   memcpy(str2, "ABCDEF", 6);
-
-   ret = memcmp(str1, str2, 5);
-
-   if(ret > 0) {
-      printf("str2 is less than str1");
-   } else if(ret < 0) {
-      printf("str1 is less than str2");
-   } else {
-      printf("str1 is equal to str2");
-   }
-
-   return(0);
-}
 
 ft_itoa.c
 int		main(void)
@@ -358,14 +342,13 @@ int main () {
 }
 
 ft_memmove.c
-int main () {
-   char dest[] = "oldstring";
+int main ()
+{
+   char dest[] = ft_strdup("oldstring");
    const char src[]  = "newstring";
 
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
    ft_memmove(dest, src, 9);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
-
+   printf("%s", dest);
    return(0);
 }
 
@@ -422,5 +405,100 @@ int		main()
 	char *str = ft_strnew(7);
 	ft_memmove(str, "justine", ft_strlen("justine"));
 	puts(str);
+	return (0);
+}
+
+ft_strclr
+#include <stdio.h>
+int main()
+{
+	char testclr[11] = "helloWorld";
+	printf("%s", ft_strclr(testclr));
+	return (0);
+}
+
+ft_strequ
+int main()
+{
+	ft_putnbr(ft_strequ("hello", "bye"));
+	ft_putchar('\n');
+	ft_putnbr(ft_strequ("Hello", "Hello"));
+	ft_putchar('\n');
+	return (0);
+}
+
+ft_striter
+void ft_test(char *str)
+{
+	int i;
+	while (str[i] != '\0')
+	{
+		write(1, "i", 1);
+		i++;
+	}
+}
+
+int main()
+{
+	char *s = "hello";
+	ft_striter(s, ft_test);
+	return(0);
+}
+
+ft_striteri
+void	fti_toupper(unsigned int i, char *c)
+{
+	if ('a' <= *c && *c <= 'z')
+		*c = *c - 'a' + 'A';
+}
+
+int	main()
+{
+	char testiter[11] = "HelloWorld";
+	ft_striteri(testiter, &fti_toupper);
+	ft_putendl(testiter);
+	return (0);
+}
+ft_strjoin
+int main()
+{
+	ft_putendl(ft_strjoin("hello", "world"));
+	return (0);
+}
+
+ft_strlen
+int main()
+{
+	printf("%zu", ft_strlen("hello"));
+	return (0);
+}
+
+ft_strmap
+char	f_toupper(char c)
+{
+	if ('a' <= c && c <= 'z')
+		return (c - 'a' + 'A');
+	return (0);
+}
+
+int main()
+{
+	char testmap[11] = "helloworld";
+	ft_putendl(ft_strmap(testmap, &f_toupper));
+	return (0);
+}
+
+ft_strmapi
+char fi_toupper(unsigned int i, char c)
+{
+	if ('a' <= c && c <= 'z')
+		return (c - 'a' + 'A');
+	return (c);
+}
+
+int main()
+{
+	char testmapi[22] = "helloworld";
+	ft_putendl(ft_strmapi(testmapi, &fi_toupper));
 	return (0);
 }

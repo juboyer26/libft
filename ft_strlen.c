@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 12:56:46 by juboyer           #+#    #+#             */
-/*   Updated: 2019/05/27 10:32:59 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/17 15:18:35 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		ft_strlen(const char *str)
 {
-	int len;
+	size_t len;
 
 	len = 0;
 	while (str[len] != '\0')

@@ -6,7 +6,7 @@
 /*   By: juboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:14:21 by juboyer           #+#    #+#             */
-/*   Updated: 2019/06/03 13:00:32 by juboyer          ###   ########.fr       */
+/*   Updated: 2019/06/17 12:43:12 by juboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <errno.h>
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
